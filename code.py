@@ -38,17 +38,15 @@ class Linear_Regression:
 
         print(f"Loss: {loss:.4f}")
         print(f"y = {self.m:.4f}x + {self.b:.4f}")
-        self.plot(data_x, data_y)
-        
+        # self.plot(data_x, data_y)
+
         return loss
-        
+
     def fit(self, data_x, data_y):
-        for epoch in  range(self.n_iterations):
+        for epoch in range(self.n_iterations):
             loss = self.train_one_epoch(data_x, data_y)
-            print(f"epoch: {epoch} | loss: {loss}")
-            
-            
-            
+            # print(f"epoch: {epoch} | loss: {loss}")
+
     def plot(self, data_x, data_y):
         x_line = np.linspace(0, 60, 1000)
         y_line = self.m * x_line + self.b
@@ -61,4 +59,3 @@ class Linear_Regression:
 
 model = Linear_Regression(learning_rate=0.0001, n_iterations=30)
 model.fit(data_x, data_y)
-
